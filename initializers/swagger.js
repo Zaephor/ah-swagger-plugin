@@ -1,5 +1,5 @@
 module.exports = {
-  loadPriority: 1000,
+  loadPriority: 2000,
   initialize: function(api, next) {
     var config = api.config;
     var actions = api.actions.actions;
@@ -198,9 +198,9 @@ module.exports = {
           }
         }
 
-        if (config.routes && config.swagger.documentConfigRoutes !== false) {
-          for ( var method in config.routes) {
-            var routes = config.routes[method];
+        if (api.routes.routes && config.swagger.documentConfigRoutes !== false) {
+          for ( var method in api.routes.routes) {
+            var routes = api.routes.routes[method];
             for (var l = 0, len1 = routes.length; l < len1; l++) {
               var route = routes[l];
 
